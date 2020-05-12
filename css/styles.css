@@ -39,6 +39,10 @@ ul, li, body {
   padding: 0;
   margin: 0;
 }
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+}
 /* Layout */
 
 /* Header */
@@ -48,7 +52,7 @@ header {
   height: 80px;
   width: 100%;
   font-size: 13px;
-  background-color: #fff;
+  /* background-color: transparent; */
   position: fixed;
   z-index: 1;
 }
@@ -71,6 +75,9 @@ header {
   float: left;
   line-height: 60px;
 }
+.header-logo a {
+  display: inline-block;
+}
 .header-logo img {
   width: 252px;
 }
@@ -86,7 +93,7 @@ header {
 .header-nav-left ul {
   border-right: 1px solid #ddd;
 }
-.header-right-nav .header-nav ul {
+.header-right-nav .header-nav > ul {
   display: table;
   border-collapse: separate;
   border-spacing: 24px 0;
@@ -98,16 +105,16 @@ header {
 .header-right-nav .header-nav ul li {
   display: table-cell;
 }
-.header-right-nav .header-nav ul li a {
+.header-nav a {
   position: relative;
   display: inline-block;
-  color: #000;
+  color: #fff;
 }
 .hover-nav a:before {
   content: "";
   position: absolute;
   display: block;
-  background-color: #11376B;
+  background-color: #fff;
   width: 0;
   height: 2px;
   bottom: 7px;
@@ -116,11 +123,15 @@ header {
   transition: .2s ease 0s;
 }
 .header-right-nav .header-nav ul li a:hover {
-  color: #11376B;
+  /* color: #11376B; */
   transition: .2s;
 }
 .hover-nav a:hover:before {
   width: 100%;
+}
+.hover-nav-ul1,
+.hover-nav-ul2 {
+  display: none;
 }
 /* Main */
 
@@ -502,7 +513,7 @@ header {
 #loop-wrap {
   overflow: hidden;
   position: absolute;
-  /* width: 200%; */
+  width: 100%;
   height: 100%;
   top: 0;
   left: 0;
@@ -520,10 +531,10 @@ header {
   height: inherit;
   background-size: cover;
 }
-.first-row, .second-row, .third-row {
+/* .first-row, .second-row, .third-row {
   animation: loop 50s linear infinite;
-}
-@keyframes loop {
+} */
+/* @keyframes loop {
   0% {
     transform: translateX(100%);
   }
@@ -538,7 +549,7 @@ header {
   to {
     transform: translateX(-200%);
   }
-}
+} */
 /* #loop-wrap div:first-child {
   animation: loop 50s -20s linear infinite;
 }
@@ -703,41 +714,45 @@ header {
   bottom: -60px;
   position: absolute;
 }
+.reason1 p {
+  font-weight: normal;
+}
 .reason .reason-head {
   background-color: #11376B;
   font-weight: normal;
-  padding: 15px;
-  font-size: 18px;
+  padding: 12px 17px;
+  font-size: 15px;
   color: #fff;
   margin: 100px 0;
 }
 .reason .reason-figure {
   font-weight: bold;
   margin-left: 5px;
+  font-size: 17px;
 }
 .reason-images {
   display: flex;
-  margin: 0 150px 50px 150px;
+  margin: 50px 100px;
   text-align: left;
 }
 .reason-content {
-  padding: 30px 40px;
+  padding: 20px 30px;
   background-color: #fff;
   margin: 0 15px;
   width: calc(100% / 3);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 .reason-content img {
-  width: 150px;
+  width: 100px;
   float: left;
 }
 .reason-content h3 {
-  font-size: 30px;
+  font-size: 22px;
   display: inline-block;
   margin: 0;
 }
 .reason-content h3 aside {
-  font-size: 17px;
+  font-size: 15px;
   color: #777;
   font-weight: normal;
   display: inline-block;
@@ -746,9 +761,10 @@ header {
   text-align: center;
   color: #777;
   font-weight: normal;
+  font-size: 15px;
 }
 .reason-image span {
-  font-size: 95px;
+  font-size: 80px;
   letter-spacing: -3px;
   color: #F3920B;
   font-family: Verdana;
@@ -756,7 +772,7 @@ header {
   line-height: 80px;
 }
 .reason-image .percent {
-  font-size: 60px;
+  font-size: 50px;
   color: #333;
 }
 .reason-image .not-it {
@@ -767,33 +783,33 @@ header {
   padding: 50px 0;
 }
 .reason1 h2, .reason2 h2, .reason3 h2, .reason4 h2, .reason5 h2, .reason6 h2 {
-  font-size: 30px;
+  font-size: 28px;
   color: #11376b;
 }
 .reason-description {
   background-color: #fff;
   display: table;
-  margin: 0 140px;
-  padding: 50px 40px 40px 40px;
+  margin: 0 110px;
+  padding: 35px;
 }
 .reason-description-image {
   display: table-cell;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 .reason-description-image img {
-  width: 400px;
+  width: 300px;
 }
 .reason-description-text {
   display: table-cell;
-  padding: 0 20px;
+  padding: 0 15px;
   text-align: left;
 }
 .reason-description-text h3 {
-  font-size: 25px;
+  font-size: 20px;
   margin: 0;
 }
 .reason-description-text p {
-  font-size: 19px;
+  font-size: 15px;
   font-weight: normal;
   color: #333;
 }
@@ -808,12 +824,12 @@ header {
   padding: 50px 0;
 }
 .education h2 {
-  font-size: 30px;
+  font-size: 23px;
   color: #333;
 }
 .education h2:after {
   content: "";
-  height: 3px;
+  height: 2px;
   width: 40px;
   background-color: #11376B;
   display: block;
@@ -823,27 +839,27 @@ header {
 }
 .education-contents {
   display: flex;
-  margin: 50px 100px 0;
+  margin: 50px 90px 0;
 }
 .education-content {
   width: calc(100% / 3);
-  padding: 0 20px;
+  padding: 0 15px;
 }
 .education-content img {
   width: 100%;
 }
 .education-content p {
-  font-size: 22px;
+  font-size: 18px;
   text-align: left;
   margin: 10px;
 }
 .education-content p > span {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: normal;
 }
 .education-content aside {
   font-weight: normal;
-  font-size: 13px;
+  font-size: 11px;
   text-align: right;
 }
 
@@ -859,13 +875,13 @@ header {
 }
 .reason3 h2 {
   color: #11376b;
-  font-size: 30px;
+  font-size: 27px;
 }
 .learning-style {
   display: table;
   border-collapse: separate;
   border-spacing: 40px 0;
-  margin: 0 350px;
+  margin: 0 250px;
 } 
 .learning-style-content {
   display: table-cell;
@@ -874,15 +890,22 @@ header {
 }
 .learning-style-content span {
   font-weight: normal;
+  font-size: 15px;
 }
 .learning-style-content h3 {
   margin-top: 0;
-  font-size: 22px;
+  font-size: 18px;
 }
 .learning-style-content p, 
 .learning-style-content aside {
   text-align: left;
   font-weight: normal;
+}
+.learning-style-content p {
+  font-size: 14px;
+}
+.learning-style-content aside {
+  font-size: 13px;
 }
 .learning-style-content img {
   width: 100%;
@@ -894,13 +917,17 @@ header {
   padding: 50px 0;
   background-color: #fff;
 }
+.reason4 h2 {
+  margin-bottom: 0;
+}
 .reason4 > p {
-  font-size: 20px;
+  font-size: 15px;
   color: #777;
   font-weight: normal;
 }
 .reason4-description {
   display: table;
+  margin-top: 30px;
 }
 .reason4-image {
   display: table-cell;
@@ -908,27 +935,27 @@ header {
   background-image: url(../image/bg-trainer-fdeec76baa3d245ee1a10e0322f9a88c.jpg);
   background-size: cover;
   background-position: center;
-  height: 400px;
+  height: 320px;
 }
 .reason4-image-text {
   display: table-cell;
   width: 50%;
   vertical-align: middle;
   text-align: left;
-  padding: 0 80px;
+  padding: 0 60px;
 }
 .reason4-image-text p {
   font-weight: normal;
-  font-size: 19px;
+  font-size: 15px;
   color: #777;
 }
 .reason4-image-text h3 {
-  font-size: 30px;
+  font-size: 25px;
 }
 .reason4-image-text h3::after {
   content: "";
   width: 60px;
-  height: 3px;
+  height: 2px;
   background-color: #11376B;
   display: block;
 }
@@ -936,7 +963,7 @@ header {
 /* .reason5 */
 
 .reason5 {
-  padding: 50px 100px;
+  padding: 50px 80px;
 }
 .reason5 p {
   font-weight: normal;
@@ -947,16 +974,18 @@ header {
   position: relative;
 }
 .job-change-content {
+  padding: 20px;
+  width: calc(100% / 4);
   display: table-cell;
   border-left: 1px solid #11376B;
   border-right: 1px solid #11376B;
   position: relative;
 }
 .job-change-content > img {
-  width: 15px;
+  width: 13px;
   position: absolute;
   top: 50%;
-  right: -10px;
+  right: -8px;
   transform: translateY(-50%);
   overflow: hidden;
   background-color: #fafafa;
@@ -971,15 +1000,15 @@ header {
 .job-change-image {
   background-color: #fff;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   display: inline-block;
   position: relative;
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
 }
 .job-change-image img {
   display: inline-block;
-  width: 50px;
+  width: 40px;
   position: absolute;
   top: 50%;
   text-align: center;
@@ -988,10 +1017,13 @@ header {
   -webkit-transform: translate(-50%, -50%);
   vertical-align: middle;
 }
+.job-change-content h3 {
+  font-size: 15px;
+}
 .job-change-content p {
   text-align: left;
-  padding: 0 30px;
-  font-size: 18px;
+  padding: 0;
+  font-size: 14px;
   color: #777;
 }
 .career-support {
@@ -1021,7 +1053,7 @@ header {
 /* .reason6 */
 
 .reason6 {
-  padding: 50px 130px;
+  padding: 50px;
   background-color: #fff;
 }
 .reason6 > img {
@@ -1029,7 +1061,7 @@ header {
 }
 .sponsor-table {
   border-collapse: collapse;
-  width: 100%;
+  max-width: 100%;
 }
 .sponsor-table tr td {
   border: 3px solid #ddd;
